@@ -4,7 +4,7 @@ import "./EIP2135.sol";
 
 /** A reference implementation of EIP-2135
  *
- * For simplicity, this reference implementation creates a simple `issueTicket` function without
+ * For simplicity, this reference implementation creates a super simple `issueTicket` function without
  * restriction on who can issue new tickets and under what condition a ticket can be issued.
  */
 contract SimpleEIP2135Ticket is EIP2135 {
