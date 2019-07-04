@@ -8,5 +8,5 @@ contract EIP2135 {
   function isConsumable(uint256 assetId) public view returns (bool consumable);
 
   // The interface to check whether an asset is consumable.
-  event OnConsumption(uint256 assetId);
+  event OnConsumption(uint256 indexed assetId);
 }

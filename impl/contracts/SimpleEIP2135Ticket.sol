@@ -26,6 +26,4 @@ contract SimpleEIP2135Ticket is EIP2135 {
   function isConsumable(uint256 ticketId) public view returns (bool consumable) {
     return tickets[ticketId];
   }
-
-  event OnConsumption(uint256 ticketId);
 }
