@@ -20,10 +20,7 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run:
-          name: test
-          command:
-            - npx ganache-cli -p 7545 -i 5777 > /dev/null &
-            - sleep 5 # wait for the system to run up.
-            - npx truffle migrate --network=development --contracts_build_directory="$PWD/build/dev/contracts"
-            - npx truffle test --network=development test/**/*.js
+      - run: npx ganache-cli -p 7545 -i 5777 > /dev/null &
+      - run: sleep 5 # wait for the system to run up.
+      - run: npx truffle migrate --network=development --contracts_build_directory="$PWD/build/dev/contracts"
+      - run: npx truffle test --network=development test/**/*.js
