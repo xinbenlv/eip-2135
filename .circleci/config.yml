@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:10.16.0
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: test
+          command:
+            - npx ganache-cli -p 7545 -i 5777 > /dev/null &
+            - sleep 5 # wait for the system to run up.
+            - npx truffle migrate --network=development --contracts_build_directory="$PWD/build/dev/contracts"
+            - npx truffle test --network=development test/**/*.js
