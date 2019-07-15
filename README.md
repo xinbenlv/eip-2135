@@ -1,4 +1,6 @@
-## This is a working repository for EIP-2135 Consumable Interface
+## EIP-2135 Consumable Interface Working Repository
+
+[![Build Status](https://travis-ci.com/xinbenlv/eip-2135.svg?branch=master)](https://travis-ci.com/xinbenlv/eip-2135)
 
 ### Development
 
