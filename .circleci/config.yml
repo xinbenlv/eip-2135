@@ -1,12 +1,11 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/project/impl
+    working_directory: ~/eip-2015/impl
     docker:
       - image: circleci/node:10.16.0
     steps:
       - checkout
-
       # Download and cache dependencies
       - restore_cache:
           keys:
