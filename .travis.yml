@@ -1,0 +1,40 @@
+language: node_js
+
+sudo: required
+
+node_js:
+  - "10.16.0"
+
+env:
+  - CXX=g++-4.8
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - build-essential
+      - g++-4.8
+
+before_install:
+  - export CXX="g++-4.8"
+  - npm install -g npm@latest
+  - cd impl
+
+install:
+  - npm install
+
+script:
+  - npx ganache-cli -p 7545 -i 5777 > /dev/null &
+  - sleep 5 # wait for the system to run up.
+  - npx truffle migrate --network=development --contracts_build_directory="$PWD/build/dev/contracts"
+  - npx truffle test --network=development test/**/*.js
+
+#after_success:
+#- wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
+#- chmod +x send.sh
+#- ./send.sh success $DISCORD_WEBHOOK_URL
+#after_failure:
+#- wget https://raw.githubusercontent.com/k3rn31p4nic/travis-ci-discord-webhook/master/send.sh
+#- chmod +x send.sh
+#- ./send.sh failure $DISCORD_WEBHOOK_URL
