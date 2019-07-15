@@ -1,7 +1,6 @@
 ## EIP-2135 Consumable Interface Working Repository
 
-[![Build Status](https://travis-ci.com/xinbenlv/eip-2135.svg?branch=master)](https://travis-ci.com/xinbenlv/eip-2135)
-
+[![Build Status](https://travis-ci.com/xinbenlv/eip-2135.svg?branch=master)](https://travis-ci.com/xinbenlv/eip-2135) [![CircleCI](https://circleci.com/gh/xinbenlv/eip-2135/tree/master.svg?style=svg)](https://circleci.com/gh/xinbenlv/eip-2135/tree/master)
 ### Development
 
 Development requires [`truffle`](https://github.com/trufflesuite/truffle)
