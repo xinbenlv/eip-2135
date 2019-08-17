@@ -23,7 +23,7 @@ npx truffle test
 ```
 
 
-You will need to start an instance of Ethereum testnet. Ganache provides it with a default endpoint, port and netowrk Id. You will need to **make sure it matches the `truffle.config.js`**
+You will need to start an instance of Ethereum testnet. Ganache provides it with a default endpoint, port and network Id. You will need to **make sure it matches the `truffle.config.js`**
 
 ```json5
 {
