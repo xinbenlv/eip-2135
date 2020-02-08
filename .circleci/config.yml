@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/repo/impl
     docker:
-      - image: circleci/node:10.16.0
+      - image: circleci/node:10.19.0
       - image: trufflesuite/ganache-cli
         command: ganache-cli -i 5777 -p 7545
     steps:
