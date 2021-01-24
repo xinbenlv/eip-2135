@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/xinbenlv/eip-2135#readme",
   "devDependencies": {
-    "ganache-cli": "6.4.5",
+    "ganache-cli": "6.12.2",
     "truffle": "5.0.26"
   },
   "dependencies": {
