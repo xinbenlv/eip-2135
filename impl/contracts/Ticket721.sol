@@ -1,7 +1,7 @@
 pragma solidity ^0.5.8;
 
 import "./EIP2135.sol";
-import "openzeppelin-solidity/contracts/token/ERC721/ERC721Mintable.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 /** A reference implementation of EIP-2135.
  *
@@ -32,4 +32,5 @@ contract Ticket721 is EIP2135, ERC721Mintable {
   }
 
   event OnTicketIssued(uint256 indexed ticketId);
+  
 }
